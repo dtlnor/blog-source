@@ -40,6 +40,8 @@ jobs:
       - name: Deploy pages
         working-directory: transparentlc.github.io
         run: |
-          git add -A
-          git commit -m "Site Updated: $(date "+%Y-%m-%d %H:%M:%S")"
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Site Updated: $(date "+%Y-%m-%d %H:%M:%S")"
+            git push
+          fi
