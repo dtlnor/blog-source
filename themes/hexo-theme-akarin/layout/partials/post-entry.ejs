@@ -1,0 +1,66 @@
+<div class="mdui-card mdui-m-y-5 mdui-hoverable akarin-util-rounded-5">
+    <div
+        class="akarin-post-entry-bg akarin-util-bg-cover mdui-ripple"
+        <% if (post.thumbnail_color && isCssColor(post.thumbnail_color)) { %>
+            style="background-color:<%= post.thumbnail_color %>"
+        <% } %>
+        <% if (post.thumbnail) { %>
+            data-src="<%= post.thumbnail %>"
+        <% } %>
+        <% if (post.thumbnail_webp) { %>
+            data-src-webp="<%= post.thumbnail_webp %>"
+        <% } %>
+        <% if (post.thumbnail_avif) { %>
+            data-src-avif="<%= post.thumbnail_avif %>"
+        <% } %>
+    >
+        <% if (post.thumbnail_color && !isCssColor(post.thumbnail_color)) { %>
+            <div
+                class="akarin-post-entry-bg akarin-util-bg-cover akarin-blurred-cover"
+                style="background-image:url(<%= post.thumbnail_color %>)"
+            ></div>
+        <% } %>
+
+        <div class="akarin-post-entry-title akarin-util-text-gradient">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title mdui-text-color-white-text">
+                    <%= post.title || '[Untitled]' %>
+                </div>
+                <% if (post.categories.data.length > 0) { %>
+                    <div class="mdui-card-primary-subtitle mdui-text-color-white-text akarin-util-opacity-half">
+                        <% post.categories.data.forEach((category, i) => { %>
+                            <a
+                                href="<%= url_for(category.path) %>"
+                                class="mdui-text-color-theme-secondary mdui-text-color-white-text"
+                            ><%= category.name %></a>
+                            <% if (i + 1 < post.categories.data.length) { %>&gt;<% } %>
+                        <% }); %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-card-content mdui-typo">
+        <%- strip_html(post.excerpt) || truncate(strip_html(post.content), { length: theme.posts.default_excerpt }) %>
+        <a href="<%= url_for(post.path) %>" data-entry>阅读全文</a>
+    </div>
+    <div class="mdui-divider"></div>
+    <div class="mdui-card-header mdui-valign">
+        <div>
+            <img class="mdui-card-header-avatar akarin-hover-spin" src="<%= post.avatar || theme.uiux.avatar %>">
+            <div class="mdui-card-header-title"><%= post.author || config.author %></div>
+            <div class="mdui-card-header-subtitle"><%= date(post.date, 'YYYY-MM-DD HH:mm:ss') %></div>
+        </div>
+        <% if (post.tags.data.length > 0) { %>
+            <div style="flex-grow:1"></div>
+            <div class="mdui-text-right">
+                <% post.tags.data.forEach((tag, i) => { %>
+                    <a
+                        href="<%= url_for(tag.path) %>"
+                        class="mdui-text-color-theme-secondary"
+                    ><%= tag.name %></a>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</div>

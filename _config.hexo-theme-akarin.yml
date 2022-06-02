@@ -1,0 +1,179 @@
+drawer:
+    caption:
+    menu:
+        主页:
+            href: /
+            icon: home
+        关于:
+            href: /about
+            icon: person
+        友链:
+            href: /friend
+            icon: link
+        GitHub:
+            href: https://github.com/TransparentLC
+            icon: code
+        归档:
+            preset: archive
+        RSS:
+            preset: rss
+            divider: true
+        深色模式:
+            preset: dark
+        访问统计:
+            preset: stats_busuanzi
+
+head:
+    # favicon: /img/favicon.png
+    # high_res_favicon: /img/favicon.png
+    # apple_touch_icon: /img/favicon.png
+    favicon: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/favicon.png
+    high_res_favicon: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/favicon.png
+    apple_touch_icon: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/favicon.png
+    keywords:
+    structured_data: true
+    site_verification:
+        google:
+        baidu:
+
+footer:
+    since:
+    text: Hosted by <a href="https://github.com/TransparentLC/transparentlc.github.io" target="_blank">Github Pages</a>
+
+uiux:
+    slogan: 身处寒夜 把握星光✨
+    # sidebar_image: /img/sidebar_header.jpg
+    sidebar_image: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/sidebar_header.jpg
+    sidebar_image_color: '#958981'
+    # banner_image: /img/daily_pic.png
+    banner_image: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/daily_pic.png
+    banner_image_color: '#f09ea3'
+    # avatar: /img/avatar.jpg
+    avatar: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/avatar.jpg
+    mdui_primary_theme: pink
+    mdui_accent_theme: pink
+    post_thumbnail_color: '#f09ea3'
+    copy_code_button_color: '#fff'
+    top:
+        enable: true
+        # style: fab
+        style: akarin
+
+posts:
+    default_excerpt: 120
+    license: 本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。不允许内容农场类网站、CSDN 用户和微信公众号转载。
+
+links:
+    default_avatar: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/Transparent_Akkarin.png
+    # default_avatar: /img/Transparent_Akkarin.png
+    description: >
+        <div class="mdui-card mdui-hoverable mdui-m-y-2">
+            <div class="mdui-card-content">
+                <p>虽然感觉是“可能不会有人注意到的地方”，不过如果你注意到了这里，那就真是太好了～</p>
+                <p>那么，要不要在下面的链接中再寻找一些你可能会觉得同样有意思的东西呢？੭ ᐕ)੭*⁾⁾</p>
+                <p><a id="expand" href="javascript:;">我想交换友链！</a></p>
+                <div id="expand-content" class="mdui-hidden">
+                    <p>一些小要求：</p>
+                    <ul>
+                        <li>是搭建在 GitHub Pages 上或者自建的个人博客</li>
+                        <li>有至少十篇的原创、有意义的内容（<kbd>Ctrl+C</kbd> 和 <kbd>Ctrl+V</kbd> 禁止！）</li>
+                        <li>支持 HTTPS ( ॑꒳ ॑ )</li>
+                        <li>不要🕊️，比如连续很久很久都没有更新什么的(๑˙ー˙๑)</li>
+                        <li><strong>已经把这个小站添加到了自己的友链列表～</strong></li>
+                    </ul>
+                    <blockquote>
+                        <p>
+                            站点名：存在感消失的地方|ω•`)
+                            <br>
+                            一句话：身处寒夜 把握星光✨
+                            <br>
+                            地址：<a href="https://akarin.dev" target="_blank">https://akarin.dev</a>
+                            <br>
+                            头像：<a href="https://avatars0.githubusercontent.com/u/47057319" target="_blank">这里自取～（GitHub 头像）</a>
+                        </p>
+                    </blockquote>
+                    <p>然后就可以在<a href="/about" target="_blank">关于</a>页面的评论区里，按照上面的格式留下自己的信息啦！我看到了就会加进来的( • ̀ω ⁃᷄)✧</p>
+                    <p>（未提供头像的话，默认是<a href="https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/Transparent_Akkarin.png" target="_blank">虚线阿卡林</a>哦！）</p>
+                    <small style="opacity:.2">不过真的会有菊苣愿意来交换友链吗(´• ᵕ •`)*</small>
+                </div>
+                <script>
+                    document.getElementById('expand').onclick = () => document.getElementById('expand-content').classList.toggle('mdui-hidden');
+                </script>
+            </div>
+        </div>
+    list:
+        "Will.K's Blog":
+            link: https://williamkong.xyz
+            avatar: https://ae01.alicdn.com/kf/HTB1no6ybaWs3KVjSZFxq6yWUXXaY.jpg
+            description: 一个似乎不存在的地方
+        "Davinci 的红茶馆":
+            link: https://davinciteahouse.com
+            avatar: https://ae01.alicdn.com/kf/H4b5e98a3fcda4d01afcb691bc310495bb.jpg
+            description: You are all stardust.
+        "左手的世界":
+            link: https://risehere.net
+            avatar:
+            description: Rise's Blog
+        "imByteCat":
+            link: https://www.imbytecat.com
+            avatar: https://ae01.alicdn.com/kf/H4bf8c8e611be46e786eb3b64204abf45U.jpg
+            description: ✨ To reach the unreachable star.
+        "咸鱼白的窝":
+            link: https://blanca.world
+            avatar: https://avatars.githubusercontent.com/u/29428546?s=160
+            description: 一些奇奇怪怪的东西
+        "Misaka":
+            link: https://railgun.icu
+            avatar: https://avatars.githubusercontent.com/u/52127603?s=160
+            description: Misaka Mikoto
+        "Lost Space":
+            link: https://hinwai.top
+            avatar: https://hinwai.top/avatar.jpeg
+            description: Hinux's Blog
+        "Artist's Dream":
+            link: https://rainartist.top
+            avatar: https://avatars.githubusercontent.com/u/53852308?s=160
+            description: It's better to burn out than to fade away
+        "Bottle 小站":
+            link: https://bottle.moe
+            avatar: https://avatars.githubusercontent.com/u/12976469?s=160
+            description: SomeBottle's Blog
+        "恒 HengY1 毅":
+            link: https://hengy1.top
+            avatar: https://avatars.githubusercontent.com/u/98681454?s=160
+            description: 没有最强，只有更强
+
+comment:
+    livere:
+        # enable: false
+        enable: true
+        uid: MTAyMC80NDUwOC8yMTAzOQ==
+
+stats:
+    busuanzi:
+        # enable: false
+        enable: true
+        script: https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/js/bsz.min.js
+        site_uv: true
+        site_pv: true
+        page_pv: true
+
+mathjax:
+
+rss: /atom.xml
+
+stylesheets:
+# - /css/mdui.min.css
+# - /css/prism-line-numbers.min.css
+# - /css/prism-vsc-dark-plus.min.css
+# - /css/APlayer.min.css
+# - /css/style.css
+- https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/css/mdui.min.css
+- https://fastly.jsdelivr.net/combine/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css,npm/prism-themes@1/themes/prism-vsc-dark-plus.min.css,npm/aplayer@1/dist/APlayer.min.css,gh/TransparentLC/transparentlc.github.io/css/style.min.css
+
+scripts:
+# - /js/APlayer.min.js
+# - /js/mdui.min.js
+# - /js/medium-zoom.min.js
+# - /js/script.js
+- https://fastly.jsdelivr.net/combine/gh/TransparentLC/transparentlc.github.io/js/mdui.min.js,npm/medium-zoom@1/dist/medium-zoom.min.js,npm/instant.page@5/instantpage.min.js,npm/aplayer@1/dist/APlayer.min.js,gh/TransparentLC/transparentlc.github.io/js/script.min.js

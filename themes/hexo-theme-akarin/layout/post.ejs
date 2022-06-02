@@ -1,0 +1,87 @@
+<div class="mdui-card mdui-shadow-4 akarin-util-rounded-5">
+    <div
+        class="akarin-post-bg akarin-util-bg-cover mdui-ripple"
+        <% if (page.thumbnail_color && isCssColor(page.thumbnail_color)) { %>
+            style="background-color:<%= page.thumbnail_color %>"
+        <% } %>
+        <% if (page.thumbnail) { %>
+            data-src="<%= page.thumbnail %>"
+        <% } %>
+        <% if (page.thumbnail_webp) { %>
+            data-src-webp="<%= page.thumbnail_webp %>"
+        <% } %>
+        <% if (page.thumbnail_avif) { %>
+            data-src-avif="<%= page.thumbnail_avif %>"
+        <% } %>
+    >
+        <% if (page.thumbnail_color && !isCssColor(page.thumbnail_color)) { %>
+            <div
+                class="akarin-post-bg akarin-util-bg-cover akarin-blurred-cover"
+                style="background-image:url(<%= page.thumbnail_color %>)"
+            ></div>
+        <% } %>
+
+        <div class="akarin-post-title akarin-util-text-gradient">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title mdui-text-color-white-text">
+                    <%= page.title || '[Untitled]' %>
+                </div>
+                <% if (page.categories && page.categories.data.length > 0) { %>
+                    <div class="mdui-card-primary-subtitle mdui-text-color-white-text akarin-util-opacity-half">
+                        <% page.categories.data.forEach((category, i) => { %>
+                            <a
+                                href="<%= url_for(category.path) %>"
+                                class="mdui-text-color-theme-secondary mdui-text-color-white-text"
+                            ><%= category.name %></a>
+                            <% if (i + 1 < page.categories.data.length) { %>&gt;<% } %>
+                        <% }); %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-card-header mdui-valign">
+        <div>
+            <img class="mdui-card-header-avatar akarin-hover-spin" src="<%= page.avatar || theme.uiux.avatar %>">
+            <div class="mdui-card-header-title"><%= page.author || config.author %></div>
+            <div class="mdui-card-header-subtitle"><%= date(page.date, 'YYYY-MM-DD HH:mm:ss') %></div>
+        </div>
+        <% if (page.tags && page.tags.data.length > 0) { %>
+            <div style="flex-grow:1"></div>
+            <div class="mdui-text-right">
+                <% page.tags.data.forEach((tag, i) => { %>
+                    <a
+                        href="<%= url_for(tag.path) %>"
+                        class="mdui-text-color-theme-secondary"
+                    ><%= tag.name %></a>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+    <article class="mdui-card-content mdui-typo mdui-p-a-3">
+        <%- page.content %>
+
+        <% const license = page.hide_license ? '' : (page.license || theme.posts.license); %>
+        <% if (license) { %>
+            <blockquote class="mdui-m-x-0 mdui-p-y-1 mdui-m-b-0" style="border-left:4px solid rgba(0,0,0,.36)">
+                <strong><%- license %></strong>
+                <br>
+                <strong>本文作者：<%= page.author || config.author %></strong>
+                <br>
+                <strong>本文链接：<a href="<%= removeIndex(page.permalink) %>"><%= removeIndex(page.permalink) %></a></strong>
+            </blockquote>
+        <% } %>
+    </article>
+    <% if (Object.keys(theme.comment).some(k => theme.comment[k].enable)) { %>
+        <% if (page.comments) { %>
+            <%- partial('partials/comment-area') %>
+        <% } else { %>
+            <div class="mdui-typo-subheading mdui-text-center mdui-m-y-5 akarin-util-opacity-half">评论已被作者关闭</div>
+        <% } %>
+    <% } %>
+</div>
+
+<!-- Paginator in post.ejs -->
+<% if (!is_page()) { %>
+    <%- partial('partials/paginator') %>
+<% } %>

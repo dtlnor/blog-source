@@ -1,0 +1,6 @@
+<% page.posts.each(post => { %>
+    <%- partial('partials/post-entry', { post }) %>
+<% }); %>
+
+<!-- Paginator in tag.ejs -->
+<%- partial('partials/paginator') %>

@@ -1,0 +1,46 @@
+<%
+const categoriesList = list_categories({
+    show_count: false,
+});
+const tagsList = list_tags({
+    show_count: false,
+});
+const archivesList = list_archives({
+    show_count: false,
+    format: 'YYYY-MM',
+});
+%>
+
+<% if (is_year() === false) { %>
+    <div class="mdui-typo">
+        <h1>归档</h1>
+
+        <% if (categoriesList) { %>
+            <p>
+                <h2>分类</h2>
+                <%- categoriesList %>
+            </p>
+        <% } %>
+
+        <% if (tagsList) { %>
+            <p>
+                <h2>标签</h2>
+                <%- tagsList %>
+            </p>
+        <% } %>
+
+        <% if (archivesList) { %>
+            <p>
+                <h2>时间</h2>
+                <%- archivesList %>
+            </p>
+        <% } %>
+    </div>
+<% } else { %>
+    <% page.posts.each(post => { %>
+        <%- partial('partials/post-entry', { post }) %>
+    <% }); %>
+
+    <!-- Paginator in archive.ejs -->
+    <%- partial('partials/paginator') %>
+<% } %>

@@ -1,0 +1,30 @@
+---
+title: 阿卡林匿名版
+date: 2019-05-18 21:04:38
+updated: 2019-05-18 21:04:38
+excerpt: 一个没有什么存在感的匿名版
+thumbnail: https://ae01.alicdn.com/kf/HTB1s161Xl1D3KVjSZFyq6zuFpXa5.jpg
+thumbnail_webp: https://ae01.alicdn.com/kf/H4eda9e218f644cfda121e7078c91f365b.jpg
+thumbnail_avif: https://vfile.meituan.net/mmdb/37f1e525ccc8fd1b0e96534184daa25940405.jpg
+thumbnail_color: data:image/jpeg;base64,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
+---
+
+因为上学期学了一点点~~世界上最好的语言~~ PHP 和一点点 MySQL 数据库的操作，同时自己又是个 [A 岛](https://adnmb.com)岛民~~肥肥~~，所以就想着自己能不能也做一个类似的匿名版(\* ॑꒳ ॑\* )⋆\*
+
+嗯……结果就是在寒假用了一个星期的时间，真的把匿名版肝了出来( \*¯ ꒳¯\*)
+
+<img data-src-webp="https://ae01.alicdn.com/kf/U498ab0dc789945e1bb92881b77968d59V.jpg" data-src="https://ae01.alicdn.com/kf/HTB1kbD6XlWD3KVjSZKP761p7FXaQ.png">
+
+匿名版的大多数东西都是参考 A 岛做的，比如颜文字，比如 `>>No.串号` 的引用，比如 SAGE 的操作，~~当然还有红名~~(´ﾟωﾟ｀)
+
+从名字就可以看出……这其实是个和小灯里一样没有什么存在感的匿名版。不知道小岛以后会不会被注意到，但是如果你愿意上岛看一看的话，那就真是太好了～
+
+**阿卡林匿名版的地址：[`https://git.io/AkarinNMB`](https://git.io/AkarinNMB)**
+
+**或者扫描下面的二维码↓**
+
+<img data-src-webp="https://ae01.alicdn.com/kf/Uc5b26877afa4456b8a313089a47bb99e6.jpg" data-src="https://ae01.alicdn.com/kf/HTB1KTn.Xa1s3KVjSZFtq6yLOpXa6.jpg">
+
+因为不想备案，所以还没有买一个域名给匿名版挂上的打算……当然，因为没有域名的关系，匿名版是没有 HTTPS 证书的。
+
+不过就算小透明以后哪天给匿名版迁移了服务器，或者给它挂上了域名，上面的链接仍然是可以访问的（っ╹◡╹）ﾉ

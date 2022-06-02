@@ -1,0 +1,108 @@
+<!-- 打开抽屉菜单的按钮 -->
+<button
+    class="mdui-fab mdui-text-color-grey-700 mdui-shadow-0 mdui-m-a-2"
+    style="position:fixed;z-index:1"
+    mdui-drawer="{target:'#akarin-drawer'}"
+><i class="mdui-icon material-icons">menu</i></button>
+
+<!-- 左边的抽屉菜单 -->
+<nav id="akarin-drawer" class="mdui-drawer mdui-drawer-full-height mdui-shadow-6">
+    <div id="akarin-drawer-media" class="mdui-p-x-2 akarin-util-bg-cover">
+        <img
+            id="akarin-drawer-avatar"
+            class="mdui-m-t-4 mdui-img-circle akarin-hover-spin"
+            src="<%= theme.uiux.avatar %>"
+        >
+        <div class="mdui-card-media-covered akarin-util-text-gradient">
+            <div class="mdui-card-primary">
+                <div class="mdui-typo-subheading"><%= config.author %> </div>
+                <div class="mdui-typo-caption akarin-util-opacity-half"><%= theme.drawer.caption || config.title %> </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-list" mdui-collapse>
+        <% Object.keys(theme.drawer.menu).forEach(key => { %>
+            <% if (theme.drawer.menu[key].preset === 'archive') { %>
+                <div>
+                    <a class="mdui-list-item mdui-ripple" href="<%= url_for('/archives') %>">
+                        <i class="mdui-list-item-icon mdui-icon material-icons">collections_bookmark</i>
+                        <span class="mdui-list-item-content"><%= key %></span>
+                        <small class="mdui-color-theme-accent akarin-drawer-badge"><%= site.posts.length %></small>
+                    </a>
+                </div>
+            <% } else if (theme.drawer.menu[key].preset === 'rss') { %>
+                <% if (theme.rss) { %>
+                    <div>
+                        <a class="mdui-list-item mdui-ripple" href="<%= url_for(theme.rss) %>">
+                            <i class="mdui-list-item-icon mdui-icon material-icons">rss_feed</i>
+                            <span class="mdui-list-item-content"><%= key %></span>
+                        </a>
+                    </div>
+                <% } %>
+            <% } else if (theme.drawer.menu[key].preset === 'dark') { %>
+                <div class="mdui-collapse-item mdui-collapse-item-open">
+                    <div class="mdui-list-item mdui-ripple mdui-collapse-item-header">
+                        <i class="mdui-list-item-icon mdui-icon material-icons">brightness_4</i>
+                        <span class="mdui-list-item-content"><%= key %></span>
+                        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                    </div>
+                    <div class="mdui-list mdui-collapse-item-body">
+                        <div class="mdui-list-item mdui-ripple" data-dark="auto">
+                            <span class="mdui-list-item-content">根据系统主题切换</span>
+                        </div>
+                        <div class="mdui-list-item mdui-ripple" data-dark="enable">
+                            <span class="mdui-list-item-content">启用</span>
+                        </div>
+                        <div class="mdui-list-item mdui-ripple" data-dark="disable">
+                            <span class="mdui-list-item-content">禁用</span>
+                        </div>
+                    </div>
+                </div>
+            <% } else if (theme.drawer.menu[key].preset === 'stats_busuanzi') { %>
+                <% if (theme.stats.busuanzi.enable) { %>
+                    <div class="mdui-collapse-item mdui-collapse-item-open">
+                        <div class="mdui-list-item mdui-ripple mdui-collapse-item-header">
+                            <i class="mdui-list-item-icon mdui-icon material-icons">insert_chart</i>
+                            <span class="mdui-list-item-content"><%= key %></span>
+                            <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                        </div>
+                        <div class="mdui-list mdui-collapse-item-body">
+                            <% if (theme.stats.busuanzi.site_pv) { %>
+                                <div class="mdui-list-item mdui-ripple">
+                                    <span class="mdui-list-item-content">站点访问量</span>
+                                    <small id="busuanzi_value_site_pv" class="mdui-color-theme-accent akarin-drawer-badge">Loading</small>
+                                </div>
+                            <% } %>
+                            <% if (theme.stats.busuanzi.site_uv) { %>
+                                <div class="mdui-list-item mdui-ripple">
+                                    <span class="mdui-list-item-content">站点访客数</span>
+                                    <small id="busuanzi_value_site_uv" class="mdui-color-theme-accent akarin-drawer-badge">Loading</small>
+                                </div>
+                            <% } %>
+                            <% if (theme.stats.busuanzi.page_pv) { %>
+                                <div class="mdui-list-item mdui-ripple">
+                                    <span class="mdui-list-item-content">页面访问量</span>
+                                    <small id="busuanzi_value_page_pv" class="mdui-color-theme-accent akarin-drawer-badge">Loading</small>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <div>
+                    <a class="mdui-list-item mdui-ripple" href="<%= removeIndex(['http://', 'https://', '//'].find(e => theme.drawer.menu[key].href.startsWith(e)) ? theme.drawer.menu[key].href : url_for(theme.drawer.menu[key].href)) %>">
+                        <% if (theme.drawer.menu[key].icon) { %>
+                            <i class="mdui-list-item-icon mdui-icon material-icons"><%= theme.drawer.menu[key].icon %></i>
+                        <% } else { %>
+                            <i class="mdui-list-item-icon"></i>
+                        <% } %>
+                        <span class="mdui-list-item-content"><%= key %></span>
+                    </a>
+                </div>
+            <% } %>
+            <% if (theme.drawer.menu[key].divider) { %>
+                <div class="mdui-divider"></div>
+            <% } %>
+        <% }); %>
+    </div>
+</nav>

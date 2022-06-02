@@ -1,0 +1,17 @@
+<% if (theme.uiux.top.enable) { %>
+    <% if (theme.uiux.top.style === 'akarin') { %>
+        <picture id="akarin-top" title="返回顶部">
+            <source srcset="https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/top.avif" type="image/avif">
+            <source srcset="https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/top.webp" type="image/webp">
+            <img src="https://fastly.jsdelivr.net/gh/TransparentLC/transparentlc.github.io/img/top.png">
+            <!-- <source srcset="<%= url_for('/img/top.webp') %>" type="image/webp"> -->
+            <!-- <img src="<%= url_for('/img/top.png') %>"> -->
+        </picture>
+    <% } else if (theme.uiux.top.style === 'fab') { %>
+        <button
+            id="akarin-top"
+            title="返回顶部"
+            class="mdui-fab mdui-fab-mini mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"
+        ><i class="mdui-icon material-icons">keyboard_arrow_up</i></button>
+    <% } %>
+<% } %>
