@@ -44,11 +44,11 @@ thumbnail_color: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wCEAA0NDQ0O
 
 # 关于本站
 
-本站目前使用 [GitHub Pages](https://github.com/TransparentLC/transparentlc.github.io) 服务进行部署，页面文件由 [Hexo](https://hexo.io/zh-cn/) 生成，<del>主题为 <a style="text-decoration:line-through" href="https://github.com/viosey/hexo-theme-material">viosey/hexo-theme-material</a></del> 现在用的主题是[自己写的](https://github.com/TransparentLC/hexo-theme-akarin)！⁄(⁄⁄•⁄ω⁄•⁄⁄)⁄
+本站目前使用 [Hexo](https://hexo.io/zh-cn/) 框架生成页面文件，通过 [Github Actions](https://github.com/TransparentLC/blog-source/blob/master/.github/workflows/deploy.yml) 自动部署到 [GitHub Pages](https://github.com/TransparentLC/transparentlc.github.io)。<del>主题为 <a style="text-decoration:line-through" href="https://github.com/viosey/hexo-theme-material">viosey/hexo-theme-material</a></del> 现在用的主题是[自己写的](https://github.com/TransparentLC/hexo-theme-akarin)！⁄(⁄⁄•⁄ω⁄•⁄⁄)⁄
 
 > hexo-theme-material 已经[弃坑](https://liyin.date/2020/07/25/new-theme-new-start)了，~~说不定我哪天就会把主题给换掉了~~ 已经换了 (　ε:)
 
-本站的评论服务由[来必力](https://livere.com/)提供，对评论的回复频率不会低于一个月一次。目前在本站发表评论**不需要进行实名认证**（用于第三方登录的账号可能仍然需要实名认证，但与本站无关），也**不会显示 IP 归属地信息**。
+本站的评论服务由[来必力](https://livere.com/)提供，对评论的回复频率不会低于一个月一次。目前在本站发表评论**不需要进行实名认证**（用于第三方登录的账号可能仍然需要实名认证，但与本站无关），也**不会显示 IP 归属地信息**，我不会主动开启此类功能。
 
 本站可能会拒绝任何对已发表内容的编辑或删除请求。在确实需要编辑或删除的情况下，本站可能会通过镜像、快照等方式保证编辑或删除的内容可以被恢复。
 
